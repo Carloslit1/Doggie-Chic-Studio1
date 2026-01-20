@@ -388,8 +388,7 @@ p {
 }
 
 @media (max-width:911px) {
-
-    .menu {
+.menu {
         padding: 20px;
     }
 
