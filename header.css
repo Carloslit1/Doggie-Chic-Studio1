@@ -1,0 +1,190 @@
+/*All Headers*/
+:root{
+  --navA:#0D47A1;
+  --navB:#1565C0;
+  --navC:#1976D2;
+  --shadow: 0 10px 24px rgba(0,0,0,.22);
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.header{
+  min-height: 70px;
+  padding-top: 96px;
+}
+
+.menu.container{
+  position: fixed !important;
+  top: 0; left: 0; right: 0;
+  width: 100vw !important;
+  max-width: none !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+
+  padding: 14px 22px !important;
+
+  background: linear-gradient(90deg, var(--navA) 0%, var(--navB) 45%, var(--navC) 100%) !important;
+  box-shadow: var(--shadow) !important;
+  border-bottom: 1px solid rgba(255,255,255,.20) !important;
+  border-radius: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.logo{
+  display: flex !important;
+  align-items: center !important;
+}
+.logo img{
+  height: 58px !important;
+  width: auto !important;
+  display: block !important;
+
+  background: rgba(255,255,255,.96) !important;
+  padding: 8px 14px !important;
+  border-radius: 16px !important;
+
+  border: 2px solid rgba(255,255,255,.25) !important;
+  box-shadow: 0 10px 18px rgba(0,0,0,.18) !important;
+}
+
+.menu .navbar ul li{ float: left; } /* tu estilo base */
+.menu .navbar ul li a{
+  color: #fff !important;
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+}
+.menu .navbar ul li a:hover,
+.menu .navbar ul li a.active{
+  background: rgba(255,255,255,.16) !important;
+  color: #fff !important;
+}
+
+/* Hamburguesa */
+.menu-icono{
+  filter: brightness(0) invert(1) !important;
+}
+
+.submenu{ position: relative; }
+#img-carrito{ filter: brightness(0) invert(1) !important; }
+
+.submenu #carrito{ display:none; }
+.submenu:hover #carrito{
+  display:block;
+  position:absolute;
+  right: 0;
+  top: 100%;
+  z-index: 99999;
+
+  background-color: rgba(17, 24, 39, 0.90);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+
+  padding: 18px;
+  min-width: 380px;
+  box-shadow: 0 18px 38px rgba(0,0,0,.35);
+}
+
+@media (max-width: 911px){
+
+  .header{ padding-top: 112px; }
+
+  .menu.container{
+    padding: 12px 14px !important;
+  }
+
+  .menu label{
+    display: initial !important;
+  }
+
+  .menu .navbar{
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: var(--navB) !important;
+    display: none !important;
+    padding: 10px 0 !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.18) !important;
+  }
+
+  #menu:checked ~ .navbar{
+    display: block !important;
+  }
+
+  .menu .navbar ul li{
+    width: 100% !important;
+    float: none !important;
+  }
+
+  .menu .navbar ul li a{
+    display: block !important;
+    width: 100% !important;
+    font-size: 18px !important;
+    padding: 14px 14px !important;
+    border-radius: 0 !important;
+  }
+
+  .submenu:hover #carrito{
+    right: 12px !important;
+    left: auto !important;
+    transform: none !important;
+    width: min(420px, calc(100vw - 24px)) !important;
+    min-width: unset !important;
+  }
+}
+
+.topbar{
+  min-height: 70px;
+  padding-top: 96px;
+}
+
+.topbar-inner{
+  position: fixed !important;
+  top: 0; left: 0; right: 0;
+  width: 100vw !important;
+  max-width: none !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+
+  padding: 14px 22px !important;
+
+  background: linear-gradient(90deg,#0D47A1 0%,#1565C0 45%,#1976D2 100%) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.22) !important;
+  border-bottom: 1px solid rgba(255,255,255,.20) !important;
+}
+
+.topbar-inner{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+}
+
+.brand img{
+  height: 58px !important;
+  width:auto !important;
+  padding: 8px 14px !important;
+  background: rgba(255,255,255,.96) !important;
+  border-radius: 16px !important;
+}
+
+.nav a{
+  color:#fff !important;
+  font-weight: 800 !important;
+  border-radius: 12px !important;
+}
+
+.nav a:hover,
+.nav a.active{
+  background: rgba(255,255,255,.16) !important;
+  color:#fff !important;
+}
