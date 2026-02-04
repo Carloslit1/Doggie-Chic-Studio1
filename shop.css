@@ -484,12 +484,11 @@ th{ font-weight: 800; border-bottom: 1px solid rgba(255,255,255,.2); }
   .grid{ grid-template-columns: 1fr; }
 }
 
-/* ===== FIX: el header global es fijo, entonces shop necesita espacio arriba ===== */
 .shop-header{
-  padding-top: 96px; /* igual que .header */
+  padding-top: 96px; 
 }
 
-/* en móvil el header suele ser más alto */
+/* header un poco mas alto */
 @media (max-width: 911px){
   .shop-header{
     padding-top: 112px;
@@ -524,7 +523,6 @@ th{ font-weight: 800; border-bottom: 1px solid rgba(255,255,255,.2); }
   border: 2px solid rgba(255,255,255,.85);
 }
 
-/* ===== Empuje global para páginas con header fijo ===== */
 body{
   padding-top: 96px;
 }
@@ -535,7 +533,6 @@ body{
   }
 }
 
-/* Evita doble empuje en páginas que ya usan .header */
 .header{
   padding-top: 0 !important;
 }
