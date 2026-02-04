@@ -60,10 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const tok of tokens) {
       if (t.includes(tok)) score += 1;
     }
-    return score; // 0..N
+    return score;
   }
 
-  // ===== CART =====
+  // ===== CARRITO =====
   function getCart() {
     try { return JSON.parse(localStorage.getItem(STORAGE) || "[]"); }
     catch { return []; }
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // abrir similar en modal (delegación)
+  // abrir similar 
   document.addEventListener("click", (e) => {
     const openBtn = e.target.closest("[data-open]");
     if (!openBtn) return;
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (card) openModalFromCard(card);
   });
 
-  // ===== FILTERS =====
+  // ===== Filtros =====
   function applyFilters() {
     const q = search ? search.value : "";
     const cards = $$(".card");
@@ -292,7 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (search) search.addEventListener("input", applyFilters);
   if (sort) sort.addEventListener("change", applyFilters);
 
-  // ===== BUTTONS (delegación para que funcione aunque agregues productos en el futuro) =====
   if (grid) {
     grid.addEventListener("click", (e) => {
       const viewBtn = e.target.closest(".btnView");
