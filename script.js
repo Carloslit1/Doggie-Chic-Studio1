@@ -269,7 +269,7 @@ function renderFavoritos() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  montarFavoritosEnCarrito();   // favoritos dentro del dropdown
+  montarFavoritosEnCarrito();   
   agregarBotonesFavorito();    
   renderFavoritos();            // carga desde LocalStorage y pinta
 });
