@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verificar correo</title>
+</head>
+<body>
+  <h2>Verificando tu correo...</h2>
+  <p id="msg">Espera un momento.</p>
+
+  <script>
+    const API = "http://localhost:3000"; // el bak
+    const params = new URLSearchParams(location.search);
+    const token = params.get("token");
+
+    const msg = document.getElementById("msg");
+
+    async function run() {
+      if (!token) {
+        msg.textContent = " Falta token en el enlace.";
+        return;
+      }
+
+      try {
+        const r = await fetch(`${API}/verify/confirm`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token })
+        });
+
+        const data = await r.json();
+        if (!r.ok) {
+          msg.textContent = "❌ " + (data.error || "No se pudo verificar");
+          return;
+        }
+
+        msg.textContent = "✅ " + data.message + " (ya puedes iniciar sesión)";
+      } catch (e) {
+        msg.textContent = " Error conectando con el servidor.";
+      }
+    }
+
+    run();
+  </script>
+</body>
+</html>
