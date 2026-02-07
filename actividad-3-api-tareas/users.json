@@ -1,0 +1,70 @@
+[
+  {
+    "id": "7981f07fa6749819c2b3095e3",
+    "email": "test@doggie.com",
+    "name": "Nery",
+    "passwordHash": "$2b$10$zlu642zTITaA2eCCeEMfue3pgekErLO67A.ZEyYCTq7YiiqSHti1y",
+    "provider": "local",
+    "createdAt": "2026-02-05T00:25:30.339Z"
+  },
+  {
+    "id": "5f5c26c2d80b5819c2ef129e7",
+    "provider": "google",
+    "oauthKey": "google:102527563378512633329",
+    "email": "carlosgsgalvan@gmail.com",
+    "name": "skie ss",
+    "photo": "https://lh3.googleusercontent.com/a/ACg8ocKt-WeuVmGqjIjincckailufK0gJgBBrTQZ-nzBPuCLDlq1NsNi=s96-c",
+    "createdAt": "2026-02-05T17:54:42.791Z"
+  },
+  {
+    "id": "c28d4a2ae726119c2ef7ccc8",
+    "provider": "google",
+    "oauthKey": "google:113134527048309828715",
+    "email": "carlosgibransanchez@gmail.com",
+    "name": "Carlos Gibran Sanchez",
+    "photo": "https://lh3.googleusercontent.com/a/ACg8ocJUp2tyizVQUEtOpVUNfTINtiiP-3TNLxAcGGAgEJ4zAiaO4e0=s96-c",
+    "createdAt": "2026-02-05T18:01:57.704Z"
+  },
+  {
+    "id": "d38d3a9afaad1819c2f483acf",
+    "provider": "facebook",
+    "oauthKey": "facebook:4244588632424190",
+    "email": "luesgalvan@gmail.com",
+    "name": "Enrique Sanchez",
+    "photo": "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=4244588632424190&height=50&width=50&ext=1772911788&hash=AT-N9F1jKKyblulWHR2gcV7U",
+    "createdAt": "2026-02-05T19:29:48.751Z"
+  },
+  {
+    "id": "59a3905a4bcb2819c307f3761",
+    "email": "carlosgibransanchez@gmail.com",
+    "name": "carlosgibransanchez",
+    "passwordHash": "$2b$10$KvbdXgYawfMVIPNh3SRRvuc9LqXNW0mhg1Vmfs16pcSyyi5z0hioC",
+    "provider": "local",
+    "createdAt": "2026-02-06T01:09:29.569Z",
+    "emailVerified": false,
+    "verifyToken": "b1ecafa03fa777d989a3b89822a321722b2868c3e73e46f17df23eaee782b197",
+    "verifyTokenExp": 1770342578292
+  },
+  {
+    "id": "85d53b71cdf2519c313ed1a0",
+    "email": "test100@doggie.com",
+    "name": "Nery",
+    "passwordHash": "$2b$10$gkAQKkSLDJ9SISLufZSCve87lbcjPl.FFB8SPP7wRkqYNooJ8sn0W",
+    "provider": "local",
+    "createdAt": "2026-02-06T04:38:46.432Z",
+    "emailVerified": false,
+    "verifyToken": "9d418f999f103d1d99ef3c5f140fbe90280eb0127a8ba3973d11e3a6e366900a",
+    "verifyTokenExp": 1770354526432
+  },
+  {
+    "id": "34121aad66cbd819c31459786",
+    "email": "video@doggie.com",
+    "name": "Nery",
+    "passwordHash": "$2b$10$aNT9z4rreStDFP2Wig8ckeW4R.NMXJLvCHjara7rSbPxQkg7dPYxO",
+    "provider": "local",
+    "createdAt": "2026-02-06T04:46:10.310Z",
+    "emailVerified": false,
+    "verifyToken": "38611a221359b48c082167ec3ea24d5fd4d81d621c7d72f94bd2efe4a5649fd0",
+    "verifyTokenExp": 1770354970310
+  }
+]

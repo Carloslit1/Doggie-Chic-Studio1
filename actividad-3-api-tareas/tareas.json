@@ -1,0 +1,16 @@
+[
+  {
+    "id": "14bf77d7b9b65819c2b35398c",
+    "titulo": "Bañar a Eevee",
+    "descripcion": "Spa completo",
+    "completada": false,
+    "createdAt": "2026-02-05T00:30:34.380Z"
+  },
+  {
+    "id": "939c3c8769fcd19c3145c58d",
+    "titulo": "Tarea 1",
+    "descripcion": "Demo API",
+    "completada": false,
+    "createdAt": "2026-02-06T04:46:22.093Z"
+  }
+]
