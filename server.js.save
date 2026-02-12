@@ -1,0 +1,723 @@
+enrique@MacBook-Air-de-Nery DoggieF % cd ~/DoggieF/api-tareas/actividad4-productos
+
+enrique@MacBook-Air-de-Nery actividad4-productos % npm ls --depth=0 | egrep "jest|supertest"
+
+├── jest@30.2.0
+└── supertest@7.2.2
+enrique@MacBook-Air-de-Nery actividad4-productos % nano package.json
+
+
+ *  History restored 
+
+enrique@MacBook-Air-de-Nery actividad4-productos % d ~/DoggieF/api-tareas/actividad4-productos
+zsh: command not found: d
+enrique@MacBook-Air-de-Nery actividad4-productos % npm ls --depth=0 | egrep "jest|supertest"
+
+├── jest@30.2.0
+└── supertest@7.2.2
+enrique@MacBook-Air-de-Nery actividad4-productos % nano package.json
+
+enrique@MacBook-Air-de-Nery actividad4-productos % ^[[200~npm ins
+tall
+zsh: bad pattern: ^[[200~npm
+enrique@MacBook-Air-de-Nery actividad4-productos % ~
+zsh: permission denied: /Users/enrique
+enrique@MacBook-Air-de-Nery actividad4-productos % npm install
+
+
+up to date, audited 430 packages in 947ms
+
+77 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+enrique@MacBook-Air-de-Nery actividad4-productos % npm test
+
+
+> actividad4-productos@1.0.0 test
+> jest --runInBand
+
+No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+In /Users/enrique/DoggieF/api-tareas/actividad4-productos
+  8 files checked.
+  testMatch: **/__tests__/**/*.?([mc])[jt]s?(x), **/?(*.)+(spec|test).?([mc])[jt]s?(x) - 0 matches
+  testPathIgnorePatterns: /node_modules/ - 8 matches
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
+enrique@MacBook-Air-de-Nery actividad4-productos % tests/
+  auth.test.js
+  productos.test.js
+
+zsh: no such file or directory: tests/
+zsh: command not found: auth.test.js
+zsh: command not found: productos.test.js
+enrique@MacBook-Air-de-Nery actividad4-productos % /actividad4-productos
+
+zsh: no such file or directory: /actividad4-productos
+enrique@MacBook-Air-de-Nery actividad4-productos % mkdir tests
+
+enrique@MacBook-Air-de-Nery actividad4-productos % ls
+
+node_modules            server.js
+package-lock.json       server.js.save
+package.json            src
+public                  tests
+enrique@MacBook-Air-de-Nery actividad4-productos % tests
+
+zsh: command not found: tests
+enrique@MacBook-Air-de-Nery actividad4-productos % nano tests/auth.test.js
+
+enrique@MacBook-Air-de-Nery actividad4-productos % nano tests/productos.test.js
+
+enrique@MacBook-Air-de-Nery actividad4-productos % nano server.js 
+
+enrique@MacBook-Air-de-Nery actividad4-productos % npm test
+
+
+> actividad4-productos@1.0.0 test
+> jest --runInBand
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+  console.log
+     MongoDB conectado
+
+      at log (server.js:40:13)
+
+  console.log
+    Servidor corriendo en el puerto 3001
+
+      at Server.log (server.js:43:36)
+
+ FAIL  tests/productos.test.js (5.667 s)
+  Productos Routes
+    ✕ Debe crear producto (4793 ms)
+    ✓ Debe listar productos (138 ms)
+
+  ● Productos Routes › Debe crear producto
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 201
+
+      35 |       });
+      36 |
+    > 37 |     expect(res.statusCode).toBe(200);
+         |                            ^
+      38 |     expect(res.body.producto).toBeDefined();
+      39 |   });
+      40 |
+
+      at Object.toBe (tests/productos.test.js:37:28)
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+ PASS  tests/auth.test.js
+  Auth Routes
+    ✓ Debe registrar un usuario correctamente (94 ms)
+    ✓ Debe loguear usuario correctamente (70 ms)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       1 failed, 3 passed, 4 total
+Snapshots:   0 total
+Time:        6.107 s
+Ran all test suites.
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log " MongoDB conectado".
+
+      38 |     }
+      39 |     await mongoose.connect(process.env.MONGO_URI);
+    > 40 |     console.log(" MongoDB conectado");
+         |             ^
+      41 |
+      42 |     const PORT = process.env.PORT || 3001;
+      43 |     app.listen(PORT, () => console.log("Servidor corriendo en el puerto", PORT));
+
+      at console.log (node_modules/@jest/console/build/index.js:311:10)
+      at log (server.js:40:13)
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Servidor corriendo en el puerto 3001".
+
+      41 |
+      42 |     const PORT = process.env.PORT || 3001;
+    > 43 |     app.listen(PORT, () => console.log("Servidor corriendo en el puerto", PORT));
+         |                                    ^
+      44 |   } catch (err) {
+      45 |     console.error(" Error conectando MongoDB:", err.message);
+      46 |     process.exit(1);
+
+      at console.log (node_modules/@jest/console/build/index.js:311:10)
+      at Server.log (server.js:43:36)
+      at Server.f (node_modules/once/once.js:25:25)
+
+Jest did not exit one second after the test run has completed.
+
+'This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+npm test -- --detectOpenHandles
+
+^C
+enrique@MacBook-Air-de-Nery actividad4-productos % npm test -- --detectOpenHandles
+
+
+> actividad4-productos@1.0.0 test
+> jest --runInBand --detectOpenHandles
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+  console.log
+     MongoDB conectado
+
+      at log (server.js:40:13)
+
+  console.log
+    Servidor corriendo en el puerto 3001
+
+      at Server.log (server.js:43:36)
+
+ FAIL  tests/productos.test.js
+  Productos Routes
+    ✕ Debe crear producto (2328 ms)
+    ✓ Debe listar productos (131 ms)
+
+  ● Productos Routes › Debe crear producto
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 201
+
+      35 |       });
+      36 |
+    > 37 |     expect(res.statusCode).toBe(200);
+         |                            ^
+      38 |     expect(res.body.producto).toBeDefined();
+      39 |   });
+      40 |
+
+      at Object.toBe (tests/productos.test.js:37:28)
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+ PASS  tests/auth.test.js
+  Auth Routes
+    ✓ Debe registrar un usuario correctamente (89 ms)
+    ✓ Debe loguear usuario correctamente (73 ms)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       1 failed, 3 passed, 4 total
+Snapshots:   0 total
+Time:        3.514 s, estimated 7 s
+Ran all test suites.
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log " MongoDB conectado".
+
+      38 |     }
+      39 |     await mongoose.connect(process.env.MONGO_URI);
+    > 40 |     console.log(" MongoDB conectado");
+         |             ^
+      41 |
+      42 |     const PORT = process.env.PORT || 3001;
+      43 |     app.listen(PORT, () => console.log("Servidor corriendo en el puerto", PORT));
+
+      at console.log (node_modules/@jest/console/build/index.js:311:10)
+      at log (server.js:40:13)
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Servidor corriendo en el puerto 3001".
+
+      41 |
+      42 |     const PORT = process.env.PORT || 3001;
+    > 43 |     app.listen(PORT, () => console.log("Servidor corriendo en el puerto", PORT));
+         |                                    ^
+      44 |   } catch (err) {
+      45 |     console.error(" Error conectando MongoDB:", err.message);
+      46 |     process.exit(1);
+
+      at console.log (node_modules/@jest/console/build/index.js:311:10)
+      at Server.log (server.js:43:36)
+      at Server.f (node_modules/once/once.js:25:25)
+
+r^C
+enrique@MacBook-Air-de-Nery actividad4-productos % nano tests/productos.test.js
+
+enrique@MacBook-Air-de-Nery actividad4-productos % nano server.js 
+
+enrique@MacBook-Air-de-Nery actividad4-productos % nano package.json
+
+enrique@MacBook-Air-de-Nery actividad4-productos % node server.js
+
+[dotenv@17.2.4] injecting env (3) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+ MongoDB conectado
+Servidor corriendo en el puerto 3001
+^C
+enrique@MacBook-Air-de-Nery actividad4-productos % npm install
+
+
+up to date, audited 430 packages in 892ms
+
+77 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+enrique@MacBook-Air-de-Nery actividad4-productos % npm test
+
+
+> actividad4-productos@1.0.0 test
+> NODE_ENV=test jest --runInBand --detectOpenHandles
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+ FAIL  tests/productos.test.js (10.803 s)
+  Productos Routes
+    ✕ Debe crear producto (5011 ms)
+    ✕ Debe listar productos (5009 ms)
+
+  ● Productos Routes › Debe crear producto
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      24 |
+      25 | describe("Productos Routes", () => {
+    > 26 |   it("Debe crear producto", async () => {
+         |   ^
+      27 |     const res = await request(app)
+      28 |       .post("/productos")
+      29 |       .set("Authorization", `Bearer ${token}`)
+
+      at it (tests/productos.test.js:26:3)
+      at Object.describe (tests/productos.test.js:25:1)
+
+  ● Productos Routes › Debe listar productos
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      39 |   });
+      40 |
+    > 41 |   it("Debe listar productos", async () => {
+         |   ^
+      42 |     const res = await request(app)
+      43 |       .get("/productos")
+      44 |       .set("Authorization", `Bearer ${token}`);
+
+      at it (tests/productos.test.js:41:3)
+      at Object.describe (tests/productos.test.js:25:1)
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+ PASS  tests/auth.test.js
+  Auth Routes
+    ✓ Debe registrar un usuario correctamente (86 ms)
+    ✓ Debe loguear usuario correctamente (76 ms)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       2 failed, 2 passed, 4 total
+Snapshots:   0 total
+Time:        11.279 s
+Ran all test suites.
+
+Jest has detected the following 1 open handle potentially keeping Jest from exiting:
+
+  ●  TCPSERVERWRAP
+
+      41 |   it("Debe listar productos", async () => {
+      42 |     const res = await request(app)
+    > 43 |       .get("/productos")
+         |        ^
+      44 |       .set("Authorization", `Bearer ${token}`);
+      45 |
+      46 |     expect(res.statusCode).toBe(200);
+
+      at Test.serverAddress (node_modules/supertest/lib/test.js:63:35)
+      at new Test (node_modules/supertest/lib/test.js:49:14)
+      at Object.obj.<computed> [as get] (node_modules/supertest/index.js:40:18)
+      at Object.get (tests/productos.test.js:43:8)
+
+enrique@MacBook-Air-de-Nery DoggieF % cd ~/DoggieF/api-tareas/actividad4-productos
+
+enrique@MacBook-Air-de-Nery actividad4-productos % npm ls --depth=0 | egrep "jest|supertest"
+
+├── jest@30.2.0
+└── supertest@7.2.2
+enrique@MacBook-Air-de-Nery actividad4-productos % nano package.json
+
+
+ *  History restored 
+
+enrique@MacBook-Air-de-Nery actividad4-productos % d ~/DoggieF/api-tareas/actividad4-productos
+zsh: command not found: d
+enrique@MacBook-Air-de-Nery actividad4-productos % npm ls --depth=0 | egrep "jest|supertest"
+
+├── jest@30.2.0
+└── supertest@7.2.2
+enrique@MacBook-Air-de-Nery actividad4-productos % nano package.json
+
+enrique@MacBook-Air-de-Nery actividad4-productos % ^[[200~npm ins
+tall
+zsh: bad pattern: ^[[200~npm
+enrique@MacBook-Air-de-Nery actividad4-productos % ~
+zsh: permission denied: /Users/enrique
+enrique@MacBook-Air-de-Nery actividad4-productos % npm install
+
+
+up to date, audited 430 packages in 947ms
+
+77 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+enrique@MacBook-Air-de-Nery actividad4-productos % npm test
+
+
+> actividad4-productos@1.0.0 test
+> jest --runInBand
+
+No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+In /Users/enrique/DoggieF/api-tareas/actividad4-productos
+  8 files checked.
+  testMatch: **/__tests__/**/*.?([mc])[jt]s?(x), **/?(*.)+(spec|test).?([mc])[jt]s?(x) - 0 matches
+  testPathIgnorePatterns: /node_modules/ - 8 matches
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
+enrique@MacBook-Air-de-Nery actividad4-productos % tests/
+  auth.test.js
+  productos.test.js
+
+zsh: no such file or directory: tests/
+zsh: command not found: auth.test.js
+zsh: command not found: productos.test.js
+enrique@MacBook-Air-de-Nery actividad4-productos % /actividad4-productos
+
+zsh: no such file or directory: /actividad4-productos
+enrique@MacBook-Air-de-Nery actividad4-productos % mkdir tests
+
+enrique@MacBook-Air-de-Nery actividad4-productos % ls
+
+node_modules            server.js
+package-lock.json       server.js.save
+package.json            src
+public                  tests
+enrique@MacBook-Air-de-Nery actividad4-productos % tests
+
+zsh: command not found: tests
+enrique@MacBook-Air-de-Nery actividad4-productos % nano tests/auth.test.js
+
+enrique@MacBook-Air-de-Nery actividad4-productos % nano tests/productos.test.js
+
+enrique@MacBook-Air-de-Nery actividad4-productos % nano server.js 
+
+enrique@MacBook-Air-de-Nery actividad4-productos % npm test
+
+
+> actividad4-productos@1.0.0 test
+> jest --runInBand
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+  console.log
+     MongoDB conectado
+
+      at log (server.js:40:13)
+
+  console.log
+    Servidor corriendo en el puerto 3001
+
+      at Server.log (server.js:43:36)
+
+ FAIL  tests/productos.test.js (5.667 s)
+  Productos Routes
+    ✕ Debe crear producto (4793 ms)
+    ✓ Debe listar productos (138 ms)
+
+  ● Productos Routes › Debe crear producto
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 201
+
+      35 |       });
+      36 |
+    > 37 |     expect(res.statusCode).toBe(200);
+         |                            ^
+      38 |     expect(res.body.producto).toBeDefined();
+      39 |   });
+      40 |
+
+      at Object.toBe (tests/productos.test.js:37:28)
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+ PASS  tests/auth.test.js
+  Auth Routes
+    ✓ Debe registrar un usuario correctamente (94 ms)
+    ✓ Debe loguear usuario correctamente (70 ms)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       1 failed, 3 passed, 4 total
+Snapshots:   0 total
+Time:        6.107 s
+Ran all test suites.
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log " MongoDB conectado".
+
+      38 |     }
+      39 |     await mongoose.connect(process.env.MONGO_URI);
+    > 40 |     console.log(" MongoDB conectado");
+         |             ^
+      41 |
+      42 |     const PORT = process.env.PORT || 3001;
+      43 |     app.listen(PORT, () => console.log("Servidor corriendo en el puerto", PORT));
+
+      at console.log (node_modules/@jest/console/build/index.js:311:10)
+      at log (server.js:40:13)
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Servidor corriendo en el puerto 3001".
+
+      41 |
+      42 |     const PORT = process.env.PORT || 3001;
+    > 43 |     app.listen(PORT, () => console.log("Servidor corriendo en el puerto", PORT));
+         |                                    ^
+      44 |   } catch (err) {
+      45 |     console.error(" Error conectando MongoDB:", err.message);
+      46 |     process.exit(1);
+
+      at console.log (node_modules/@jest/console/build/index.js:311:10)
+      at Server.log (server.js:43:36)
+      at Server.f (node_modules/once/once.js:25:25)
+
+Jest did not exit one second after the test run has completed.
+
+'This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+npm test -- --detectOpenHandles
+
+^C
+enrique@MacBook-Air-de-Nery actividad4-productos % npm test -- --detectOpenHandles
+
+
+> actividad4-productos@1.0.0 test
+> jest --runInBand --detectOpenHandles
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+  console.log
+     MongoDB conectado
+
+      at log (server.js:40:13)
+
+  console.log
+    Servidor corriendo en el puerto 3001
+
+      at Server.log (server.js:43:36)
+
+ FAIL  tests/productos.test.js
+  Productos Routes
+    ✕ Debe crear producto (2328 ms)
+    ✓ Debe listar productos (131 ms)
+
+  ● Productos Routes › Debe crear producto
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 201
+
+      35 |       });
+      36 |
+    > 37 |     expect(res.statusCode).toBe(200);
+         |                            ^
+      38 |     expect(res.body.producto).toBeDefined();
+      39 |   });
+      40 |
+
+      at Object.toBe (tests/productos.test.js:37:28)
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+ PASS  tests/auth.test.js
+  Auth Routes
+    ✓ Debe registrar un usuario correctamente (89 ms)
+    ✓ Debe loguear usuario correctamente (73 ms)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       1 failed, 3 passed, 4 total
+Snapshots:   0 total
+Time:        3.514 s, estimated 7 s
+Ran all test suites.
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log " MongoDB conectado".
+
+      38 |     }
+      39 |     await mongoose.connect(process.env.MONGO_URI);
+    > 40 |     console.log(" MongoDB conectado");
+         |             ^
+      41 |
+      42 |     const PORT = process.env.PORT || 3001;
+      43 |     app.listen(PORT, () => console.log("Servidor corriendo en el puerto", PORT));
+
+      at console.log (node_modules/@jest/console/build/index.js:311:10)
+      at log (server.js:40:13)
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "Servidor corriendo en el puerto 3001".
+
+      41 |
+      42 |     const PORT = process.env.PORT || 3001;
+    > 43 |     app.listen(PORT, () => console.log("Servidor corriendo en el puerto", PORT));
+         |                                    ^
+      44 |   } catch (err) {
+      45 |     console.error(" Error conectando MongoDB:", err.message);
+      46 |     process.exit(1);
+
+      at console.log (node_modules/@jest/console/build/index.js:311:10)
+      at Server.log (server.js:43:36)
+      at Server.f (node_modules/once/once.js:25:25)
+
+r^C
+enrique@MacBook-Air-de-Nery actividad4-productos % nano tests/productos.test.js
+
+enrique@MacBook-Air-de-Nery actividad4-productos % nano server.js 
+
+enrique@MacBook-Air-de-Nery actividad4-productos % nano package.json
+
+enrique@MacBook-Air-de-Nery actividad4-productos % node server.js
+
+[dotenv@17.2.4] injecting env (3) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+ MongoDB conectado
+Servidor corriendo en el puerto 3001
+^C
+enrique@MacBook-Air-de-Nery actividad4-productos % npm install
+
+
+up to date, audited 430 packages in 892ms
+
+77 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+enrique@MacBook-Air-de-Nery actividad4-productos % npm test
+
+
+> actividad4-productos@1.0.0 test
+> NODE_ENV=test jest --runInBand --detectOpenHandles
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+ FAIL  tests/productos.test.js (10.803 s)
+  Productos Routes
+    ✕ Debe crear producto (5011 ms)
+    ✕ Debe listar productos (5009 ms)
+
+  ● Productos Routes › Debe crear producto
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      24 |
+      25 | describe("Productos Routes", () => {
+    > 26 |   it("Debe crear producto", async () => {
+         |   ^
+      27 |     const res = await request(app)
+      28 |       .post("/productos")
+      29 |       .set("Authorization", `Bearer ${token}`)
+
+      at it (tests/productos.test.js:26:3)
+      at Object.describe (tests/productos.test.js:25:1)
+
+  ● Productos Routes › Debe listar productos
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+      39 |   });
+      40 |
+    > 41 |   it("Debe listar productos", async () => {
+         |   ^
+      42 |     const res = await request(app)
+      43 |       .get("/productos")
+      44 |       .set("Authorization", `Bearer ${token}`);
+
+      at it (tests/productos.test.js:41:3)
+      at Object.describe (tests/productos.test.js:25:1)
+
+  console.log
+    [dotenv@17.2.4] injecting env (3) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+
+      at _log (node_modules/dotenv/lib/main.js:142:11)
+
+ PASS  tests/auth.test.js
+  Auth Routes
+    ✓ Debe registrar un usuario correctamente (86 ms)
+    ✓ Debe loguear usuario correctamente (76 ms)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       2 failed, 2 passed, 4 total
+Snapshots:   0 total
+Time:        11.279 s
+Ran all test suites.
+
+Jest has detected the following 1 open handle potentially keeping Jest from exiting:
+
+  ●  TCPSERVERWRAP
+
+      41 |   it("Debe listar productos", async () => {
+      42 |     const res = await request(app)
+    > 43 |       .get("/productos")
+         |        ^
+      44 |       .set("Authorization", `Bearer ${token}`);
+      45 |
+      46 |     expect(res.statusCode).toBe(200);
+
+      at Test.serverAddress (node_modules/supertest/lib/test.js:63:35)
+      at new Test (node_modules/supertest/lib/test.js:49:14)
+      at Object.obj.<computed> [as get] (node_modules/supertest/index.js:40:18)
+      at Object.get (tests/productos.test.js:43:8)
+
+enrique@MacBook-Air-de-Nery actividad4-productos % 
