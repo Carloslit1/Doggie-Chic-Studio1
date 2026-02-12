@@ -28,7 +28,27 @@ app.use("/auth", authRoutes);
 app.use("/productos", productosRoutes);
 
 /* EALTHCHECK  */
-app.get("/health", (req, res) => res.json({ ok: true }));
+/* HEALTHCHECK  */
+app.get("/health", (req, res) =>
+  res.json({ ok: true, msg: "health-v2-actividad4" })
+);
+
+app.get("/__version", (req, res) => {
+  res.json({
+    ok: true,
+    msg: "version-endpoint-actividad4",
+    commit: process.env.VERCEL_GIT_COMMIT_SHA || null,
+    now: new Date().toISOString()
+  });
+});
+
+app.get("/productos-test", (req, res) => {
+  res.json({ ok: true, msg: "productos-test vivo" });
+});
+
+app.get("/productos-test", (req, res) => {
+  res.json({ ok: true, msg: "productos-test vivo" });
+});
 
 /*404  */
 app.use((req, res) => res.status(404).json({ error: "Ruta no encontrada" }));
