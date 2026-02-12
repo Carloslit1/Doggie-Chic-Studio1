@@ -33,4 +33,5 @@ app.get("/health", (req, res) => res.json({ ok: true }));
 /*404  */
 app.use((req, res) => res.status(404).json({ error: "Ruta no encontrada" }));
 
-module.exports = { app };
+module.exports = app;
+
