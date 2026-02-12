@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+
+  <link rel="stylesheet" href="Cstyle.css">
+  <link rel="stylesheet" href="BWap/style2.css">
+  <link rel="stylesheet" href="header.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <!-- WhatsApp -->
+  <a href="https://api.whatsapp.com/send?phone=8136254170&text=Hola,%20me%20gustaria%20obtener%20más%20información"
+     class="float pulse" target="_blank" rel="noopener">
+    <i class="fa fa-whatsapp my-float"></i>
+  </a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="menu container">
+
+      <a href="index.html" class="logo">
+        <img src="img/Logo.png" alt="Logo Doggie Chic Studio">
+      </a>
+
+      <input type="checkbox" id="menu">
+      <label for="menu">
+        <img src="img/menu.png" class="menu-icono" alt="Menú">
+      </label>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="Productos.html">Productos</a></li>
+          <li><a class="active" href="Contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Acciones derecha (Cuenta y Carrito opcional) -->
+      <div class="menu-actions">
+        <a href="login.html" class="account-link">
+          <img src="img/user.svg" class="icon" alt="Usuario">
+          <span>Cuenta</span>
+        </a>
+
+        
+        <ul class="cart-wrap">
+          <li class="submenu">
+            <img src="img/car.svg" id="img-carrito" alt="Carrito">
+            <div id="carrito">
+              <table id="lista-carrito">
+                <thead>
+                  <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+              <a href="#" id="vaciar-carrito" class="btn-3">Vaciar Carrito</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- El formulario del contacto-->
+  <main class="page">
+    <div class="container contact-card">
+
+      <form class="form">
+        <h3>Escríbenos</h3>
+        <p>
+          En <strong>Doggie Chic Studio</strong> te respondemos lo más rápido posible.
+          Cuéntanos qué necesitas y te ayudamos.
+        </p>
+
+        <label for="nombre">Escribe tu nombre</label>
+        <input type="text" id="nombre" class="box" placeholder="Tu nombre">
+
+        <label for="correo">Escribe tu correo</label>
+        <input type="email" id="correo" class="box" placeholder="tucorreo@gmail.com">
+
+        <label for="mensaje">Escribe tu mensaje</label>
+        <textarea class="box" id="mensaje" cols="30" rows="10" placeholder="Hola, quiero información sobre..."></textarea>
+
+        <input type="submit" value="Enviar" class="submit">
+      </form>
+
+      <div class="info">
+        <img src="img/info-1.svg" class="img-1" alt="Ilustración de contacto">
+
+        <div class="location">
+          <div class="icons">
+            <img src="img/gps.svg" alt="Ubicación">
+            <p>Av Paseo de los Leones 2048, Cumbres 2o. Sector Secc C, 64610 Monterrey, N.L.</p>
+          </div>
+
+          <div class="icons">
+            <img src="img/number.svg" alt="Teléfono">
+            <p>81 4006 2762</p>
+          </div>
+
+          <div class="icons">
+            <img src="img/email.svg" alt="Correo">
+            <p>doggiechicstudio@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="social">
+          <img src="img/fa.svg" alt="Facebook">
+          <img src="img/tw.svg" alt="Twitter">
+          <img src="img/ins.svg" alt="Instagram">
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

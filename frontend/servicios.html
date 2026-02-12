@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doggie Chic - Paquetes</title>
+  <link rel="stylesheet" href="servicios.css" />
+  <link rel="stylesheet" href="BWap/style2.css">
+  <link rel="stylesheet" href="header.css">
+</head>
+
+<body>
+
+  <Link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <a href="https://api.whatsapp.com/send?phone=8136254170&text=Hola, me gustaria Obtener más 
+información" class="float pulse" target="_blank"> 
+    <i class="fa fa-whatsapp my-float "></i>
+  </a>
+
+  <!-- HEADER (SIN CUENTA) -->
+  <header class="header">
+    <div class="menu container">
+
+      <a href="index.html" class="logo">
+        <img src="img/Logo.png" alt="Logo Doggie Chic Studio" />
+      </a>
+
+      <input type="checkbox" id="menu" />
+      <label for="menu">
+        <img src="img/menu.png" class="menu-icono" alt="Menú" />
+      </label>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a class="active" href="servicios.html">Servicios</a></li>
+          <li><a href="Productos.html">Productos</a></li>
+          <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- SOLO CARRITO -->
+      <ul class="cart-wrap">
+        <li class="submenu">
+          <img src="img/car.svg" id="img-carrito" alt="Carrito" />
+          <div id="carrito">
+            <table id="lista-carrito">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <a href="#" id="vaciar-carrito" class="btn-3">Vaciar Carrito</a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Encabezado de la página (corto, sin robar espacio) -->
+    <section class="intro">
+      <div class="intro-left">
+        <h1>Paquetes Doggie Chic</h1>
+        <p>
+          Aquí puedes escribir información breve: cómo funcionan los paquetes, qué incluye cada uno,
+          horarios, recomendaciones y cualquier detalle importante.
+        </p>
+      </div>
+
+      <div class="intro-right">
+        <div class="info-box">
+          <h3>¿Cómo funciona?</h3>
+          <ul>
+            <li>Elige tu paquete</li>
+            <li>Agenda tu visita</li>
+            <li>Recibe tu servicio premium</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Caja grande membresía -->
+    <section class="membership">
+      <div class="membership-inner">
+        <div class="membership-left">
+          <h2>Membresía Doggie Chic</h2>
+          <p>
+            Paga mensual y recibe beneficios exclusivos. Ecuentra todo lo que necesita tu.
+            Peludito mensualmente .
+          </p>
+
+          <div class="membership-points">
+            <div class="point">
+              <h4>Incluye</h4>
+              <p>1 corte de pelo + 2 baños + 2 corte de uñas + 2 impieza de oidos + 2 limpieza de lagrimales y 2 corte de almohadillas</p>
+            </div>
+            <div class="point">
+              <h4>Beneficios</h4>
+              <p>Descuentos, prioridad de agenda, regalo sorpresa</p>
+            </div>
+            <div class="point">
+              <h4>Soporte</h4>
+              <p>Atención preferente por WhatsApp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="membership-right">
+          <div class="membership-card">
+            <p class="mini">Plan mensual</p>
+            <p class="big-price">$599 <span>MXN</span></p>
+            <p class="small">Renovación automática (opcional)</p>
+            <a class="btn btn-outline" href="#">Quiero la membresía</a>
+            <p class="tiny">*Luego conectamos pagos y membresía real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarjetas de paquetes (3 cajas) -->
+    <section class="pricing">
+      <h2 class="section-title">Nuestros paquetes</h2>
+
+      <div class="cards">
+
+<!-- Card 1 -->
+<article class="card" id="paquete-basico">
+  <div class="card-img">
+    <img src="img/PB1.png" alt="Paquete Básico" />
+  </div>
+
+  <div class="card-body">
+    <h3>Básico</h3>
+    <p class="price">$269 <span>MXN</span></p>
+
+    <ul class="features">
+      <li>Baño completo</li>
+      <li>Corte de uñas</li>
+      <li>Perfume</li>
+      <li>Cepillado</li>
+      <li>Limpieza de lagrimales</li>
+    </ul>
+
+    <a class="btn" href="#">Elegir Básico</a>
+  </div>
+</article>
+
+
+        <!-- Card 2 (recomendado) -->
+       <article class="card" id="paquete-completo">
+          <div class="badge">Más popular</div>
+          <div class="card-img">
+            <img src="img/Pb2.png" alt="Paquete Premium" />
+          </div>
+          <div class="card-body">
+            <h3>Completo</h3>
+            <p class="price">$319 <span>MXN</span></p>
+            <ul class="features">
+              <li>Corte Higienico</li>
+              <li>Baño completo</li>
+              <li>Limpieza de oídos</li>
+              <li>Corte de uñas</li>
+              <li>Cepillado</li>
+              <li>limpieza de lagrimales</li>
+            </ul>
+            <a class="btn" href="#">Elegir Premium</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+         <article class="card" id="paquete-spa">
+        <article class="card">
+          <div class="card-img">
+            <img src="img/PB3.png" alt="Paquete Spa" />
+          </div>
+          <div class="card-body">
+            <h3>Spa</h3>
+            <p class="price">$369 <span>MXN</span></p>
+            <ul class="features">
+              <li>Corte de raza/personalizado</li>
+              <li>Corte higienico</li>
+              <li>Baño completo</li>
+              <li>Corte de uñas</li>
+              <li>Cepillado</li>
+              <li>limpieza de lagrimales</li>
+            </ul>
+            <a class="btn" href="#">Elegir Spa</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© Doggie Chic Studio. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

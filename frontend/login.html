@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Login - Doggie</title>
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto;background:#33B0FF;}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
+    .card{width:420px;background:#fff;border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.18);}
+    h1{margin:0 0 6px;font-size:42px}
+    p{margin:0 0 18px;color:#666}
+    label{display:block;font-weight:900;margin-top:14px;margin-bottom:8px}
+    input{width:100%;padding:12px 10px;font-size:16px;border:1px solid #ddd;border-radius:12px;outline:none}
+    input:focus{border-color:#38B6FF}
+    .btn{width:100%;border:none;border-radius:999px;padding:14px 16px;font-weight:900;cursor:pointer;margin-top:12px}
+    .btn.primary{background:#38B6FF;color:#fff}
+    .btn.ghost{background:#fff;border:1px solid #e6e6e6;color:#111}
+    .btn.google{background:#fff;border:1px solid #e6e6e6;display:flex;gap:10px;align-items:center;justify-content:center}
+    .btn.facebook{background:#1877F2;color:#fff;display:flex;gap:10px;align-items:center;justify-content:center}
+    .ic{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:900}
+    .msg{margin-top:12px;font-weight:900}
+    .row{display:flex;gap:10px}
+    .hint{margin-top:10px;color:#666;font-size:13px;line-height:1.35}
+    .divider{margin:14px 0;border:none;border-top:1px solid #eee}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Bienvenido</h1>
+      <p>Inicia sesión</p>
+
+      <label>Email</label>
+      <input id="email" type="email" placeholder="Ingresa tu email" />
+
+      <label>Contraseña</label>
+      <input id="password" type="password" placeholder="Introduce tu contraseña" />
+
+      <button class="btn primary" id="btnLogin" type="button">Log In</button>
+
+      <!--  Crear cuenta -->
+      <button class="btn ghost" id="btnRegister" type="button">Crear cuenta</button>
+
+      <!--  Reenviar verificación -->
+      <button class="btn ghost" id="btnResend" type="button">Reenviar verificación</button>
+
+      <div class="hint">
+         <b>Crear cuenta</b> manda correo de verificación.<br/>
+        Si no te llegó: inicia sesión y presiona <b>Reenviar verificación</b>. Revisa <b>SPAM</b>.
+      </div>
+
+      <hr class="divider"/>
+
+      <div class="row">
+        <button class="btn google" id="btnGoogle" type="button">
+          <span class="ic">G</span> Google
+        </button>
+        <button class="btn facebook" id="btnFacebook" type="button">
+          <span class="ic">f</span> Facebook
+        </button>
+      </div>
+
+      <!-- IMPORTANTE: este id lo usa login.js -->
+      <div class="msg" id="msg"></div>
+    </div>
+  </div>
+
+  <!--  solo esto: carga tu JS externo -->
+  <script src="login.js"></script>
+</body>
+</html>
